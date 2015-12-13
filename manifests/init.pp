@@ -1,5 +1,5 @@
 class telegraf (
-    String $package_source = undef,
+    String $package_source = 'default',
     String $urls           = undef,
 ) inherits telegraf::params {
 

@@ -82,10 +82,10 @@ When this class is declared with the default options, Puppet:
 *Paramters within `telegraf`:*
 
 `package_source`
-Determines how to install the package. Valid options: undef, 'web'. Default: undef
+Determines how to install the package. Valid options: 'default', 'web'. Default: 'default'
 
 `urls`
-The URL's of your InfluxDB server(s). Valid options: undef, String. Default: undef
+The URL's of your InfluxDB server(s), REQUIRED. Valid options: String. Default: undef
 
 ### Defined Types
 
