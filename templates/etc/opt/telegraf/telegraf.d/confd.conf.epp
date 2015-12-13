@@ -1,0 +1,29 @@
+# This file is managed by Puppet
+
+[<%= $section %>]
+<% if $section_conf != {} { -%>
+<% $section_conf.each |$key, $value| { -%>
+  <%= $key %> = <%= $value %>
+<% } -%>
+<% } -%>
+
+<% if $subsection != '' { -%>
+[[<%= $section %>.<%= $subsection %>]]
+<% if $subsection_conf != {} { -%>
+<% $subsection_conf.each |$key, $value| { -%>
+  <%= $key %> = <%= $value %>
+<% } -%>
+<% } -%>
+<% if $tagdrop != {} { -%>
+  [<%= $section %>.<%= $subsection %>.tagdrop]
+<% $tagdrop.each |$key, $value| { -%>
+    <%= $key %> = <%= $value %>
+<% } -%>
+<% } -%>
+<% if $tagpass != {} { -%>
+  [<%= $section %>.<%= $subsection %>.tagpass]
+<% $tagpass.each |$key, $value| { -%>
+    <%= $key %> = <%= $value %>
+<% } -%>
+<% } -%>
+<% } -%>
